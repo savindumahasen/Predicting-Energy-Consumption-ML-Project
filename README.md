@@ -11,4 +11,11 @@ This project is mainly based on regression analysis. Mian aim of this project is
 4. [GitCLI](https://git-scm.com/downloads)
 
 
+create the  environment
 
+if you  are using the  windows machine use the below command
+
+```
+   python -m venv venv
+
+```
