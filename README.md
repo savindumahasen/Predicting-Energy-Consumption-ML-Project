@@ -9,13 +9,25 @@ This project is mainly based on regression analysis. Mian aim of this project is
 2. [HerokuAccount](https://heroku.com)
 3. [VSCodeIDE](https://code.visualstudio.com/)
 4. [GitCLI](https://git-scm.com/downloads)
+5. [nodejs](https://nodejs.org/en/download)
 
 
 create the  environment
 
-if you  are using the  windows machine use the below command
+if you  are using the  windows, use the below command to  create the environment in terminal
 
 ```
    python -m venv venv
 
+```
+To activate, use the below command in terminal
+
+```
+   .\venv\Scripts\activate
+```
+
+Then install the requirments file using the below command  in terminal
+
+```
+   pip install -r requirements.txt
 ```
