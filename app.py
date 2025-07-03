@@ -34,7 +34,7 @@ def predict():
     print(final_input)
     predictions=regression_model.predict(final_input)[0]
     #return jsonify({'Result':predictions})
-    return render_template('index.html',prediction_text="The energy consuming prediction is  {}".format(predictions))
+    return render_template('index.html',prediction_text="The energy consuming prediction is  {}".format(predictions)+" kwh")
 if __name__=="__main__":
     app.run(debug=True, port=5000)
 
