@@ -23,14 +23,14 @@ To activate, use the below command in terminal
 ```
    .\venv\Scripts\activate
 ```
-To  run the application type the below command in terminal
-```
-  flask run
-```
-
 
 Then install the requirments file using the below command  in terminal
 
 ```
    pip install -r requirements.txt
+```
+
+To  run the application type the below command in terminal
+```
+  flask run
 ```
