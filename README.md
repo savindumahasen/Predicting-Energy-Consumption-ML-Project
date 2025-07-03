@@ -12,7 +12,7 @@ This project is mainly based on regression analysis. Mian aim of this project is
 
 create the  environment
 
-if you  are using the  windows, use the below command to  create the environment in terminal
+If you  are using the  windows, use the below command to  create the environment in terminal
 
 ```
    python -m venv venv
@@ -23,6 +23,11 @@ To activate, use the below command in terminal
 ```
    .\venv\Scripts\activate
 ```
+To  run the application type the below command in terminal
+```
+  flask run
+```
+
 
 Then install the requirments file using the below command  in terminal
 
