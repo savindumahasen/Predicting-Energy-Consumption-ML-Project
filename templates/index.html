@@ -88,7 +88,7 @@
 </head>
 <body>
   <div class="container">
-    <h1>Energy Prediction</h1>
+    <h1>Energy Consuming Prediction</h1>
 
     <form action="{{ url_for('predict') }}" method="POST">
   <label for="building-type">Building Type</label>
@@ -100,13 +100,13 @@
   </select>
 
   <label for="SquareFootage">Square Footage</label>
-  <input type="number" step="any" name="SquareFootage" id="SquareFootage" placeholder="Enter Square Footage" required />
+  <input type="number" min=1 step="any" name="SquareFootage" id="SquareFootage" placeholder="Enter Square Footage" required />
 
   <label for="NumberofOccupants">Number of Occupants</label>
-  <input type="number" step="any" name="NumberofOccupants" id="NumberofOccupants" placeholder="Enter Number of Occupants" required />
+  <input type="number" min=1 step="any" name="NumberofOccupants" id="NumberofOccupants" placeholder="Enter Number of Occupants" required />
 
   <label for="AppliancesUsed">Appliances Used</label>
-  <input type="number" step="any" name="AppliancesUsed" id="AppliancesUsed" placeholder="Enter Appliances Used" required />
+  <input type="number" min=1 step="any" name="AppliancesUsed" id="AppliancesUsed" placeholder="Enter Appliances Used" required />
 
   <label for="AverageTemperature">Average Temperature</label>
   <input type="number" step="any" name="AverageTemperature" id="AverageTemperature" placeholder="Enter Average Temperature" required />
