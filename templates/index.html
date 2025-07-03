@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Energy Consumption Prediction</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #1e1e1e;
+      padding: 30px;
+      border-radius: 15px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      text-align: center;
+      color: #4f9efc;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: #dddddd;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #2e2e2e;
+      color: #ffffff;
+      font-size: 14px;
+      appearance: none;
+    }
+
+    input:focus, select:focus {
+      outline: 2px solid #4f9efc;
+    }
+
+    /* Optional: style individual options (note: limited browser support) */
+    select option {
+      background-color: #2e2e2e;
+      color: #ffffff;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #4f9efc;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #3c86e0;
+    }
+
+    #result {
+      margin-top: 20px;
+      text-align: center;
+      color: #2ee47d;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Energy Prediction</h1>
+
+    <form action="{{ url_for('predict') }}" method="POST">
+  <label for="building-type">Building Type</label>
+  <select id="building-type" name="BuildingType" required>
+    <option value="">Select building type</option>
+    <option value="1">Residential</option>
+    <option value="2">Commercial</option>
+    <option value="3">Industrial</option>
+  </select>
+
+  <label for="SquareFootage">Square Footage</label>
+  <input type="number" step="any" name="SquareFootage" id="SquareFootage" placeholder="Enter Square Footage" required />
+
+  <label for="NumberofOccupants">Number of Occupants</label>
+  <input type="number" step="any" name="NumberofOccupants" id="NumberofOccupants" placeholder="Enter Number of Occupants" required />
+
+  <label for="AppliancesUsed">Appliances Used</label>
+  <input type="number" step="any" name="AppliancesUsed" id="AppliancesUsed" placeholder="Enter Appliances Used" required />
+
+  <label for="AverageTemperature">Average Temperature</label>
+  <input type="number" step="any" name="AverageTemperature" id="AverageTemperature" placeholder="Enter Average Temperature" required />
+
+  <label for="days-of-week">Days of Week</label>
+  <select id="days-of-week" name="DaysOfWeek" required>
+    <option value="">Select the days of week</option>
+    <option value="1">Weekday</option>
+    <option value="2">Weekend</option>
+  </select>
+
+  <button type="submit">Predict</button>
+</form>
+
+
+    <div id="result">
+      {{prediction_text}}
+    </div>
+  </div>
+</body>
+</html>
